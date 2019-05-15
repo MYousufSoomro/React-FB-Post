@@ -39,7 +39,7 @@ const styles = theme => ({
 });
 
 class RecipeReviewCard extends React.Component {
-  state = { expanded: false, isFavorite: false };
+  state = { expanded: false };
 
   handleExpandClick = () => {
     this.setState(state => ({ expanded: !state.expanded }));
@@ -47,8 +47,6 @@ class RecipeReviewCard extends React.Component {
 
   render() {
     const { classes } = this.props;
-    const { isFavorite } = this.state;
-
     return (
       <Card className={classes.card}>
         <CardHeader
@@ -65,11 +63,6 @@ class RecipeReviewCard extends React.Component {
           title={this.props.username}
           subheader={this.props.date}
         />
-        {/* <CardMedia
-          className={classes.media}
-          image="../assets/images/image-1.jpg"
-          title="Image 1"
-        /> */}
         <FbImageLibrary images={this.props.images} />
 
         <CardContent>
